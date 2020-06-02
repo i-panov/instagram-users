@@ -9,6 +9,11 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 class InstagramUsersController extends Controller {
+    public function beforeAction($action) {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return parent::beforeAction($action);
+    }
+
     public function behaviors() {
         return [
             'access' => [

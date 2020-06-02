@@ -17,8 +17,14 @@ const app = new Vue({
             if (this.users.find(u => u.name === this.username))
                 alert('Пользователь уже добавлен!');
             else {
-                const user = await (await addInstagramUser(this.username)).json();
-                this.users.push(user);
+                const response = await addInstagramUser(this.username);
+                const body = await response.json();
+
+                if (!response.ok) {
+                    alert(body.message);
+                } else {
+                    this.users.push(body);
+                }
             }
 
             this.username = '';
