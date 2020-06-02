@@ -1,0 +1,18 @@
+header, footer {
+    background-color: cadetblue;
+}
+
+main {
+    border-left: 3px solid cadetblue;
+    border-right: 3px solid cadetblue;
+    min-height: 90vh;
+    padding: 1rem;
+}
+
+footer {
+    height: 5vh;
+}
+
+header li.nav-item:not(:first-child) {
+    margin-left: 0.5rem;
+}
